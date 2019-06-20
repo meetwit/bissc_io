@@ -22,6 +22,9 @@ void bissc_init(void){
 	
 }
 
+/*
+just 
+*/
 uint8_t bissc_one_bit(void){
 	//XMC_GPIO_SetOutputLow
 	//XMC_GPIO_SetOutputHigh

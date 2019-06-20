@@ -8,6 +8,7 @@
 
 //#define bissc_clk P0_8
 //#define bissc_miso P0_5
+//
 
 struct bissc{
 	//uint8_t head;		//  3bit
