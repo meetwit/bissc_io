@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ApplicationModel:ApplicationData xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ApplicationModel="www.infineon.com/dave/applicationmodel" xmlns:ResourceModel="http://www.infineon.com/Davex/Resource.ecore">
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/UCPROBE/v4_0_8/UCPROBE_0.app#/"/>
+  </nodes>
+  <hwConnections href="APPS/UCPROBE/v4_0_8/UCPROBE_0.app#//@connections.0"/>
+  <hwConnections href="APPS/UCPROBE/v4_0_8/UCPROBE_0.app#//@connections.1"/>
+  <hwConnections href="APPS/UCPROBE/v4_0_8/UCPROBE_0.app#//@connections.2"/>
+  <hwConnections href="APPS/UCPROBE/v4_0_8/UCPROBE_0.app#//@connections.3"/>
+  <hwConnections href="APPS/UCPROBE/v4_0_8/UCPROBE_0.app#//@connections.4"/>
+  <hwConnections href="APPS/UCPROBE/v4_0_8/UCPROBE_0.app#//@connections.5"/>
+  <hwConnections href="APPS/UCPROBE/v4_0_8/UCPROBE_0.app#//@connections.6"/>
+  <hwConnections href="APPS/UCPROBE/v4_0_8/UCPROBE_0.app#//@connections.7"/>
+</ApplicationModel:ApplicationData>

@@ -1,0 +1,1313 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "bissc.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .text.XMC_GPIO_SetOutputHigh,"ax",%progbits
+  20              	 .align 2
+  21              	 .thumb
+  22              	 .thumb_func
+  24              	XMC_GPIO_SetOutputHigh:
+  25              	.LFB138:
+  26              	 .file 1 "C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc/xmc_gpio.h"
+   1:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+   2:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @file xmc_gpio.h
+   3:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @date 2015-06-20
+   4:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+   5:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @cond
+   6:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+   7:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMClib v2.1.22 - XMC Peripheral Driver Library 
+   8:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+   9:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
+  10:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * All rights reserved.                        
+  11:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                             
+  12:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  13:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * following conditions are met:   
+  14:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  15:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
+  16:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * disclaimer.                        
+  17:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  18:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  19:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
+  20:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  21:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  22:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * products derived from this software without specific prior written permission.                  
+  23:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  24:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  25:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  26:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  27:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  28:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  29:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  30:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
+  31:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  32:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  33:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
+  34:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  35:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  36:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Change History
+  37:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * --------------
+  38:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  39:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * 2015-02-20:
+  40:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Initial draft<br>
+  41:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Documentation improved <br>
+  42:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *      
+  43:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * 2015-06-20:
+  44:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Removed version macros and declaration of GetDriverVersion API
+  45:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  46:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @endcond
+  47:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  48:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  49:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  50:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #ifndef XMC_GPIO_H
+  51:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_H
+  52:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  53:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+  54:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * HEADER FILES
+  55:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  56:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  57:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc_common.h"
+  58:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  59:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+  60:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @addtogroup XMClib XMC Peripheral Library
+  61:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @{
+  62:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  63:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  64:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+  65:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @addtogroup GPIO
+  66:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @brief General Purpose Input Output (GPIO) driver for the XMC microcontroller family.
+  67:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  68:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * GPIO driver provide a generic and very flexible software interface for all standard digital I/O 
+  69:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Each port slice has individual interfaces for the operation as General Purpose I/O and it furthe
+  70:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * connectivity to the on-chip periphery and the control for the pad characteristics. 
+  71:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  72:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * The driver is divided into Input and Output mode.
+  73:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  74:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Input mode features:
+  75:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Configuration structure XMC_GPIO_CONFIG_t and initialization function XMC_GPIO_Init()
+  76:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of weak pull-up or pull-down device. Configuration structure XMC_GPIO_MO
+  77:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC1
+  78:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of input hysteresis. XMC_GPIO_SetInputHysteresis()
+  79:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+  80:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  81:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  82:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Output mode features:
+  83:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of push pull/open drain and Alternate output. Configuration structure XM
+  84:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC4
+  85:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of pad driver strength. Configuration structure XMC_GPIO_OUTPUT_STRENGTH
+  86:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+  87:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  88:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of initial output level. Configuration structure XMC_GPIO_OUTPUT_LEVEL_t
+  89:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  90:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *@{
+  91:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  92:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  
+  93:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+  94:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * MACROS
+  95:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  96:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  97:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Pos PORT0_IOCR0_PC0_Pos
+  98:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Msk PORT0_IOCR0_PC0_Msk
+  99:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 100:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Size 				(8U)
+ 101:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 											
+ 102:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 103:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_CHECK_OUTPUT_LEVEL(level) ((level == XMC_GPIO_OUTPUT_LEVEL_LOW) || \
+ 104:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****                                             (level == XMC_GPIO_OUTPUT_LEVEL_HIGH))
+ 105:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****                                             
+ 106:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_CHECK_HWCTRL(hwctrl) ((hwctrl == XMC_GPIO_HWCTRL_DISABLED) || \
+ 107:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****                                        (hwctrl == XMC_GPIO_HWCTRL_PERIPHERAL1) || \
+ 108:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****                                        (hwctrl == XMC_GPIO_HWCTRL_PERIPHERAL2))                    
+ 109:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****                                             
+ 110:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 111:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * ENUMS
+ 112:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 113:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 114:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 115:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 116:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Defines output level of a pin. Use type \a XMC_GPIO_OUTPUT_LEVEL_t for this enum.
+ 117:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 118:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** typedef enum XMC_GPIO_OUTPUT_LEVEL
+ 119:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 120:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_OUTPUT_LEVEL_LOW  = 0x10000U, /**<  Reset bit */
+ 121:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_OUTPUT_LEVEL_HIGH = 0x1U, 	/**< Set bit  */
+ 122:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** } XMC_GPIO_OUTPUT_LEVEL_t;
+ 123:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 124:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 125:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Defines direct hardware control characteristics of the pin . Use type \a XMC_GPIO_HWCTRL_t for t
+ 126:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 127:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** typedef enum XMC_GPIO_HWCTRL
+ 128:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 129:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_DISABLED     = 0x0U, /**<  Software control only */
+ 130:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_PERIPHERAL1  = 0x1U, /**<  HWI0/HWO0 control path can override the software confi
+ 131:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_PERIPHERAL2  = 0x2U  /**<  HWI1/HWO1 control path can override the software confi
+ 132:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** } XMC_GPIO_HWCTRL_t;
+ 133:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 134:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 135:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * DEVICE FAMILY EXTENSIONS
+ 136:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 137:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 138:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  #if UC_FAMILY == XMC1
+ 139:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc1_gpio.h"
+ 140:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #elif UC_FAMILY == XMC4
+ 141:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc4_gpio.h"
+ 142:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #else
+ 143:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #error "xmc_gpio.h: family device not supported"
+ 144:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #endif
+ 145:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 146:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 147:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * API PROTOTYPES
+ 148:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 149:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 150:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #ifdef __cplusplus
+ 151:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** extern "C" {
+ 152:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** #endif
+ 153:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 154:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 155:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 156:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	  Constant pointer pointing to GPIO port, to access port registers like Pn_OUT,Pn_O
+ 157:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	  Port pin number.
+ 158:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  config GPIO configuration data structure. Refer data structure @ref XMC_GPIO_CONFIG_t fo
+ 159:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 160:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 161:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 162:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 163:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC1
+ 164:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Initializes input / output mode settings like, pull up / pull down devices,hysteresis, push pull
+ 165:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Also configures alternate function outputs and clears hardware port control for a selected \a po
+ 166:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \a config provides selected I/O settings. It configures hardware registers Pn_IOCR,Pn_OUT, Pn_OM
+ 167:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+ 168:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC4
+ 169:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Initializes input / output mode settings like, pull up / pull down devices,push pull /open drain
+ 170:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Also configures alternate function outputs and clears hardware port control for selected \a port
+ 171:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * It configures hardware registers Pn_IOCR,Pn_OUT,Pn_OMR,Pn_PDISC and Pn_PDR.\n
+ 172:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+ 173:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 174:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 175:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 176:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 177:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 178:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * This API is called in definition of DAVE_init by code generation and therefore should not be exp
+ 179:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * for the normal operation. Use other APIs only after DAVE_init is called successfully (returns DA
+ 180:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 181:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 182:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 183:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 184:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  
+ 185:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** void XMC_GPIO_Init(XMC_GPIO_PORT_t *const port, const uint8_t pin, const XMC_GPIO_CONFIG_t *const c
+ 186:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  
+ 187:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 188:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 189:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	Constant pointer pointing to GPIO port, to access hardware register Pn_IOCR.
+ 190:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	Port pin number.
+ 191:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  mode input / output functionality selection. Refer @ref XMC_GPIO_MODE_t for valid values
+ 192:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 193:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 194:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 195:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 196:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Sets digital input and output driver functionality and characteristics of a GPIO port pin. It co
+ 197:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * registers Pn_IOCR. \a mode is initially configured during initialization in XMC_GPIO_Init(). Cal
+ 198:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * the port direction functionality as needed later in the program.
+ 199:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 200:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 201:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 202:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 203:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 204:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 205:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** void XMC_GPIO_SetMode(XMC_GPIO_PORT_t *const port, const uint8_t pin, const XMC_GPIO_MODE_t mode);
+ 206:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 207:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 208:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 209:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 210:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	 Constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 211:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	 Port pin number.
+ 212:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  level output level selection. Refer @ref XMC_GPIO_OUTPUT_LEVEL_t for valid values.
+ 213:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 214:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 215:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 216:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 217:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Set port pin output level to high or low.It configures hardware registers Pn_OMR.\a level is ini
+ 218:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * configured during initialization in XMC_GPIO_Init(). Call this API to alter output level as need
+ 219:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 220:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 221:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *  XMC_GPIO_SetOutputHigh(), XMC_GPIO_SetOutputLow().
+ 222:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 223:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 224:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().
+ 225:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 226:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 227:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 228:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 229:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputLevel(XMC_GPIO_PORT_t *const port, const uint8_t pin, const 
+ 230:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 231:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLevel: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 232:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLevel: Invalid output level", XMC_GPIO_CHECK_OUTPUT_LEVEL(level));
+ 233:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   
+ 234:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = (uint32_t)level << pin;
+ 235:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 236:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 237:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 238:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 239:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 240:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	Port pin number.
+ 241:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 242:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 243:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 244:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 245:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *  Sets port pin output to high. It configures hardware registers Pn_OMR.
+ 246:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 247:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *  \par<b>Related APIs:</b><BR>
+ 248:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *  XMC_GPIO_SetOutputLow()
+ 249:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 250:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 251:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().\n
+ 252:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Register Pn_OMR is virtual and does not contain any flip-flop. A read action delivers the value 
+ 253:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 254:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 255:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 256:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputHigh(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 257:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** {
+  27              	 .loc 1 257 0
+  28              	 .cfi_startproc
+  29              	 
+  30              	 
+  31              	 
+  32 0000 80B4     	 push {r7}
+  33              	.LCFI0:
+  34              	 .cfi_def_cfa_offset 4
+  35              	 .cfi_offset 7,-4
+  36 0002 83B0     	 sub sp,sp,#12
+  37              	.LCFI1:
+  38              	 .cfi_def_cfa_offset 16
+  39 0004 00AF     	 add r7,sp,#0
+  40              	.LCFI2:
+  41              	 .cfi_def_cfa_register 7
+  42 0006 7860     	 str r0,[r7,#4]
+  43 0008 0B46     	 mov r3,r1
+  44 000a FB70     	 strb r3,[r7,#3]
+ 258:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputHigh: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 259:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 260:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = (uint32_t)0x1U << pin;
+  45              	 .loc 1 260 0
+  46 000c FB78     	 ldrb r3,[r7,#3]
+  47 000e 0122     	 movs r2,#1
+  48 0010 9A40     	 lsls r2,r2,r3
+  49 0012 7B68     	 ldr r3,[r7,#4]
+  50 0014 5A60     	 str r2,[r3,#4]
+ 261:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** }
+  51              	 .loc 1 261 0
+  52 0016 0C37     	 adds r7,r7,#12
+  53              	.LCFI3:
+  54              	 .cfi_def_cfa_offset 4
+  55 0018 BD46     	 mov sp,r7
+  56              	.LCFI4:
+  57              	 .cfi_def_cfa_register 13
+  58              	 
+  59 001a 5DF8047B 	 ldr r7,[sp],#4
+  60              	.LCFI5:
+  61              	 .cfi_restore 7
+  62              	 .cfi_def_cfa_offset 0
+  63 001e 7047     	 bx lr
+  64              	 .cfi_endproc
+  65              	.LFE138:
+  67              	 .section .text.XMC_GPIO_SetOutputLow,"ax",%progbits
+  68              	 .align 2
+  69              	 .thumb
+  70              	 .thumb_func
+  72              	XMC_GPIO_SetOutputLow:
+  73              	.LFB139:
+ 262:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 263:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 264:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 265:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 266:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	port pin number.
+ 267:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 268:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return  None
+ 269:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 270:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Description:</b><br>
+ 271:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Sets port pin output to low. It configures hardware registers Pn_OMR.\n
+ 272:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 273:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>>
+ 274:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMC_GPIO_SetOutputHigh()
+ 275:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 276:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Note:</b><br>
+ 277:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().
+ 278:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Register Pn_OMR is virtual and does not contain any flip-flop. A read action delivers the value 
+ 279:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 280:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 281:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 282:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputLow(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 283:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** {
+  74              	 .loc 1 283 0
+  75              	 .cfi_startproc
+  76              	 
+  77              	 
+  78              	 
+  79 0000 80B4     	 push {r7}
+  80              	.LCFI6:
+  81              	 .cfi_def_cfa_offset 4
+  82              	 .cfi_offset 7,-4
+  83 0002 83B0     	 sub sp,sp,#12
+  84              	.LCFI7:
+  85              	 .cfi_def_cfa_offset 16
+  86 0004 00AF     	 add r7,sp,#0
+  87              	.LCFI8:
+  88              	 .cfi_def_cfa_register 7
+  89 0006 7860     	 str r0,[r7,#4]
+  90 0008 0B46     	 mov r3,r1
+  91 000a FB70     	 strb r3,[r7,#3]
+ 284:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLow: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 285:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 286:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = 0x10000U << pin;
+  92              	 .loc 1 286 0
+  93 000c FB78     	 ldrb r3,[r7,#3]
+  94 000e 4FF48032 	 mov r2,#65536
+  95 0012 9A40     	 lsls r2,r2,r3
+  96 0014 7B68     	 ldr r3,[r7,#4]
+  97 0016 5A60     	 str r2,[r3,#4]
+ 287:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** }
+  98              	 .loc 1 287 0
+  99 0018 0C37     	 adds r7,r7,#12
+ 100              	.LCFI9:
+ 101              	 .cfi_def_cfa_offset 4
+ 102 001a BD46     	 mov sp,r7
+ 103              	.LCFI10:
+ 104              	 .cfi_def_cfa_register 13
+ 105              	 
+ 106 001c 5DF8047B 	 ldr r7,[sp],#4
+ 107              	.LCFI11:
+ 108              	 .cfi_restore 7
+ 109              	 .cfi_def_cfa_offset 0
+ 110 0020 7047     	 bx lr
+ 111              	 .cfi_endproc
+ 112              	.LFE139:
+ 114 0022 00BF     	 .section .text.XMC_GPIO_ToggleOutput,"ax",%progbits
+ 115              	 .align 2
+ 116              	 .thumb
+ 117              	 .thumb_func
+ 119              	XMC_GPIO_ToggleOutput:
+ 120              	.LFB140:
+ 288:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 289:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 290:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 291:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param port constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 292:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param pin  port pin number.
+ 293:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 294:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 295:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 296:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 297:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Configures port pin output to Toggle. It configures hardware registers Pn_OMR.
+ 298:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 299:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 300:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMC_GPIO_SetOutputHigh(), XMC_GPIO_SetOutputLow().
+ 301:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 302:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 303:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode(). Regis
+ 304:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * and does not contain any flip-flop. A read action delivers the value of 0.
+ 305:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 306:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 307:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 308:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_ToggleOutput(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 309:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 121              	 .loc 1 309 0
+ 122              	 .cfi_startproc
+ 123              	 
+ 124              	 
+ 125              	 
+ 126 0000 80B4     	 push {r7}
+ 127              	.LCFI12:
+ 128              	 .cfi_def_cfa_offset 4
+ 129              	 .cfi_offset 7,-4
+ 130 0002 83B0     	 sub sp,sp,#12
+ 131              	.LCFI13:
+ 132              	 .cfi_def_cfa_offset 16
+ 133 0004 00AF     	 add r7,sp,#0
+ 134              	.LCFI14:
+ 135              	 .cfi_def_cfa_register 7
+ 136 0006 7860     	 str r0,[r7,#4]
+ 137 0008 0B46     	 mov r3,r1
+ 138 000a FB70     	 strb r3,[r7,#3]
+ 310:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_ToggleOutput: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 311:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 312:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = 0x10001U << pin;
+ 139              	 .loc 1 312 0
+ 140 000c FB78     	 ldrb r3,[r7,#3]
+ 141 000e 4FF00112 	 mov r2,#65537
+ 142 0012 9A40     	 lsls r2,r2,r3
+ 143 0014 7B68     	 ldr r3,[r7,#4]
+ 144 0016 5A60     	 str r2,[r3,#4]
+ 313:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 145              	 .loc 1 313 0
+ 146 0018 0C37     	 adds r7,r7,#12
+ 147              	.LCFI15:
+ 148              	 .cfi_def_cfa_offset 4
+ 149 001a BD46     	 mov sp,r7
+ 150              	.LCFI16:
+ 151              	 .cfi_def_cfa_register 13
+ 152              	 
+ 153 001c 5DF8047B 	 ldr r7,[sp],#4
+ 154              	.LCFI17:
+ 155              	 .cfi_restore 7
+ 156              	 .cfi_def_cfa_offset 0
+ 157 0020 7047     	 bx lr
+ 158              	 .cfi_endproc
+ 159              	.LFE140:
+ 161 0022 00BF     	 .section .text.XMC_GPIO_GetInput,"ax",%progbits
+ 162              	 .align 2
+ 163              	 .thumb
+ 164              	 .thumb_func
+ 166              	XMC_GPIO_GetInput:
+ 167              	.LFB141:
+ 314:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 315:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 316:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 317:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param port constant pointer pointing to GPIO port, to access hardware register Pn_IN.
+ 318:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param pin  Port pin number.
+ 319:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 320:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return uint32_t pin logic level status.
+ 321:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 322:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Description:</b><br>
+ 323:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Reads the Pn_IN register and returns the current logical value at the GPIO pin.
+ 324:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 325:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 326:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * None
+ 327:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 328:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 329:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to input mode using XMC_GPIO_SetMode().
+ 330:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 331:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 332:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 333:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE uint32_t XMC_GPIO_GetInput(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 334:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 168              	 .loc 1 334 0
+ 169              	 .cfi_startproc
+ 170              	 
+ 171              	 
+ 172              	 
+ 173 0000 80B4     	 push {r7}
+ 174              	.LCFI18:
+ 175              	 .cfi_def_cfa_offset 4
+ 176              	 .cfi_offset 7,-4
+ 177 0002 83B0     	 sub sp,sp,#12
+ 178              	.LCFI19:
+ 179              	 .cfi_def_cfa_offset 16
+ 180 0004 00AF     	 add r7,sp,#0
+ 181              	.LCFI20:
+ 182              	 .cfi_def_cfa_register 7
+ 183 0006 7860     	 str r0,[r7,#4]
+ 184 0008 0B46     	 mov r3,r1
+ 185 000a FB70     	 strb r3,[r7,#3]
+ 335:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_GetInput: Invalid port", XMC_GPIO_CHECK_PORT(port));
+ 336:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 337:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   return (((port->IN) >> pin) & 0x1U);
+ 186              	 .loc 1 337 0
+ 187 000c 7B68     	 ldr r3,[r7,#4]
+ 188 000e 5A6A     	 ldr r2,[r3,#36]
+ 189 0010 FB78     	 ldrb r3,[r7,#3]
+ 190 0012 22FA03F3 	 lsr r3,r2,r3
+ 191 0016 03F00103 	 and r3,r3,#1
+ 338:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 192              	 .loc 1 338 0
+ 193 001a 1846     	 mov r0,r3
+ 194 001c 0C37     	 adds r7,r7,#12
+ 195              	.LCFI21:
+ 196              	 .cfi_def_cfa_offset 4
+ 197 001e BD46     	 mov sp,r7
+ 198              	.LCFI22:
+ 199              	 .cfi_def_cfa_register 13
+ 200              	 
+ 201 0020 5DF8047B 	 ldr r7,[sp],#4
+ 202              	.LCFI23:
+ 203              	 .cfi_restore 7
+ 204              	 .cfi_def_cfa_offset 0
+ 205 0024 7047     	 bx lr
+ 206              	 .cfi_endproc
+ 207              	.LFE141:
+ 209 0026 00BF     	 .section .text.XMC_GPIO_EnableDigitalInput,"ax",%progbits
+ 210              	 .align 2
+ 211              	 .thumb
+ 212              	 .thumb_func
+ 214              	XMC_GPIO_EnableDigitalInput:
+ 215              	.LFB144:
+ 339:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 340:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 341:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param port constant pointer pointing to GPIO port, to access hardware register Pn_PPS.
+ 342:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param pin  port pin number.
+ 343:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 344:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 345:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 346:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 347:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Enables pin power save mode and configures Pn_PPS register.This configuration is useful when the
+ 348:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Deep Sleep mode.Port pin enabled with power save mode option are set to a defined state and the 
+ 349:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * as well as the output driver stage are switched off. By default port pin does not react to power
+ 350:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 351:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 352:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMC_GPIO_DisablePowerSaveMode()
+ 353:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 354:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * <b>Note:</b><br>
+ 355:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Do not enable the Pin Power Save function for pins configured for Hardware Control (Pn_HWSEL.HWx
+ 356:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * may result in an undefined behavior of the pin when the device enters the Deep Sleep state.
+ 357:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 358:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 359:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 360:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 361:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_EnablePowerSaveMode(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 362:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 363:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_EnablePowerSaveMode: Invalid port", XMC_GPIO_CHECK_PORT(port));
+ 364:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 365:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   port->PPS |= (uint32_t)0x1U << pin;
+ 366:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 367:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 368:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 369:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 370:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 371:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param port	constant pointer pointing to GPIO port, to access hardware register Pn_PPS.
+ 372:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param pin	port pin number.
+ 373:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 374:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 375:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 376:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 377:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Disables pin power save mode and configures Pn_PPS register.This configuration is useful when th
+ 378:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Deep Sleep mode. This configuration enables input Schmitt-Trigger and output driver stage(if pin
+ 379:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * save mode previously). By default port \a pin does not react to power save mode request.
+ 380:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 381:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 382:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *  XMC_GPIO_EnablePowerSaveMode()
+ 383:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 384:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Note:</b><br>
+ 385:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Do not enable the Pin Power Save function for pins configured for Hardware Control (Pn_HWSEL.HWx
+ 386:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * may result in an undefined behavior of the pin when the device enters the Deep Sleep state.
+ 387:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 388:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 389:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 390:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_DisablePowerSaveMode(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 391:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 392:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_DisablePowerSaveMode: Invalid port", XMC_GPIO_CHECK_PORT(port));
+ 393:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 394:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   port->PPS &= ~(uint32_t)((uint32_t)0x1U << pin);
+ 395:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 396:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 397:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 398:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 399:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param port	 constant pointer pointing to GPIO port, to access hardware register Pn_HWSEL.
+ 400:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param pin	 port pin number.
+ 401:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param hwctrl direct hardware control selection. Refer @ref XMC_GPIO_HWCTRL_t for valid values.
+ 402:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 403:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 404:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 405:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 406:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Selects direct hard ware control and configures Pn_HWSEL register.This configuration is useful f
+ 407:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * overlaid with peripheral functions for which the connected peripheral needs hardware control.
+ 408:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 409:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 410:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 411:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 412:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Note:</b><br>
+ 413:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Do not enable the Pin Power Save function for pins configured for Hardware Control (Pn_HWSEL.HWx
+ 414:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Doing so may result in an undefined behavior of the pin when the device enters the Deep Sleep st
+ 415:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 416:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 417:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 418:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** void XMC_GPIO_SetHardwareControl(XMC_GPIO_PORT_t *const port, const uint8_t pin, const XMC_GPIO_HWC
+ 419:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 420:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 421:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 422:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param port	constant pointer pointing to GPIO port, to access hardware register Pn_PDISC.
+ 423:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param pin	port pin number.
+ 424:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 425:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 426:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 427:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 428:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 429:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 430:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 431:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * Enable digital input path for analog pins and configures Pn_PDISC register.This configuration is
+ 432:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  * analog port pins.
+ 433:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 434:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 435:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_EnableDigitalInput(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 436:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 216              	 .loc 1 436 0
+ 217              	 .cfi_startproc
+ 218              	 
+ 219              	 
+ 220              	 
+ 221 0000 80B4     	 push {r7}
+ 222              	.LCFI24:
+ 223              	 .cfi_def_cfa_offset 4
+ 224              	 .cfi_offset 7,-4
+ 225 0002 83B0     	 sub sp,sp,#12
+ 226              	.LCFI25:
+ 227              	 .cfi_def_cfa_offset 16
+ 228 0004 00AF     	 add r7,sp,#0
+ 229              	.LCFI26:
+ 230              	 .cfi_def_cfa_register 7
+ 231 0006 7860     	 str r0,[r7,#4]
+ 232 0008 0B46     	 mov r3,r1
+ 233 000a FB70     	 strb r3,[r7,#3]
+ 437:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_EnableDigitalInput: Invalid analog port", XMC_GPIO_CHECK_ANALOG_PORT(port));
+ 438:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   
+ 439:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h ****   port->PDISC &= ~(uint32_t)((uint32_t)0x1U << pin);
+ 234              	 .loc 1 439 0
+ 235 000c 7B68     	 ldr r3,[r7,#4]
+ 236 000e 1A6E     	 ldr r2,[r3,#96]
+ 237 0010 FB78     	 ldrb r3,[r7,#3]
+ 238 0012 0121     	 movs r1,#1
+ 239 0014 01FA03F3 	 lsl r3,r1,r3
+ 240 0018 DB43     	 mvns r3,r3
+ 241 001a 1A40     	 ands r2,r2,r3
+ 242 001c 7B68     	 ldr r3,[r7,#4]
+ 243 001e 1A66     	 str r2,[r3,#96]
+ 440:C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 244              	 .loc 1 440 0
+ 245 0020 0C37     	 adds r7,r7,#12
+ 246              	.LCFI27:
+ 247              	 .cfi_def_cfa_offset 4
+ 248 0022 BD46     	 mov sp,r7
+ 249              	.LCFI28:
+ 250              	 .cfi_def_cfa_register 13
+ 251              	 
+ 252 0024 5DF8047B 	 ldr r7,[sp],#4
+ 253              	.LCFI29:
+ 254              	 .cfi_restore 7
+ 255              	 .cfi_def_cfa_offset 0
+ 256 0028 7047     	 bx lr
+ 257              	 .cfi_endproc
+ 258              	.LFE144:
+ 260              	 .global read
+ 261 002a 00BF     	 .section .bss.read,"aw",%nobits
+ 262              	 .align 2
+ 265              	read:
+ 266 0000 00000000 	 .space 40
+ 266      00000000 
+ 266      00000000 
+ 266      00000000 
+ 266      00000000 
+ 267              	 .global bissc_read_lock
+ 268              	 .section .data.bissc_read_lock,"aw",%progbits
+ 271              	bissc_read_lock:
+ 272 0000 01       	 .byte 1
+ 273              	 .global bissc_state
+ 274              	 .section .bss.bissc_state,"aw",%nobits
+ 277              	bissc_state:
+ 278 0000 00       	 .space 1
+ 279              	 .global bissc_test
+ 280              	 .section .bss.bissc_test,"aw",%nobits
+ 281              	 .align 2
+ 284              	bissc_test:
+ 285 0000 00000000 	 .space 12
+ 285      00000000 
+ 285      00000000 
+ 286              	 .section .rodata
+ 287              	 .align 2
+ 288              	.LC0:
+ 289 0000 80       	 .byte -128
+ 290 0001 000000   	 .space 3
+ 291 0004 01000000 	 .word 1
+ 292 0008 00       	 .byte 0
+ 293 0009 000000   	 .space 3
+ 294              	 .section .text.bissc_init,"ax",%progbits
+ 295              	 .align 2
+ 296              	 .global bissc_init
+ 297              	 .thumb
+ 298              	 .thumb_func
+ 300              	bissc_init:
+ 301              	.LFB146:
+ 302              	 .file 2 "../bissc.c"
+   1:../bissc.c    **** #include "bissc.h"
+   2:../bissc.c    **** #include "xmc_gpio.h"
+   3:../bissc.c    **** 
+   4:../bissc.c    **** uint8_t read[40]={0},bissc_read_lock=1,bissc_state=0;
+   5:../bissc.c    **** struct bissc bissc_test={0};
+   6:../bissc.c    **** 
+   7:../bissc.c    **** void bissc_init(void){
+ 303              	 .loc 2 7 0
+ 304              	 .cfi_startproc
+ 305              	 
+ 306              	 
+ 307 0000 80B5     	 push {r7,lr}
+ 308              	.LCFI30:
+ 309              	 .cfi_def_cfa_offset 8
+ 310              	 .cfi_offset 7,-8
+ 311              	 .cfi_offset 14,-4
+ 312 0002 86B0     	 sub sp,sp,#24
+ 313              	.LCFI31:
+ 314              	 .cfi_def_cfa_offset 32
+ 315 0004 00AF     	 add r7,sp,#0
+ 316              	.LCFI32:
+ 317              	 .cfi_def_cfa_register 7
+   8:../bissc.c    **** 	
+   9:../bissc.c    **** 	XMC_GPIO_CONFIG_t clk_config={
+ 318              	 .loc 2 9 0
+ 319 0006 154A     	 ldr r2,.L8
+ 320 0008 07F10C03 	 add r3,r7,#12
+ 321 000c 07CA     	 ldmia r2,{r0,r1,r2}
+ 322 000e 83E80700 	 stmia r3,{r0,r1,r2}
+  10:../bissc.c    **** 		.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL,
+  11:../bissc.c    **** 		.output_level = XMC_GPIO_OUTPUT_LEVEL_HIGH,
+  12:../bissc.c    **** 		.output_strength = XMC_GPIO_OUTPUT_STRENGTH_STRONG_SHARP_EDGE,
+  13:../bissc.c    **** 	};
+  14:../bissc.c    **** 	XMC_GPIO_Init(bissc_clk,&clk_config);
+ 323              	 .loc 2 14 0
+ 324 0012 07F10C03 	 add r3,r7,#12
+ 325 0016 1248     	 ldr r0,.L8+4
+ 326 0018 0121     	 movs r1,#1
+ 327 001a 1A46     	 mov r2,r3
+ 328 001c FFF7FEFF 	 bl XMC_GPIO_Init
+  15:../bissc.c    **** 	XMC_GPIO_SetOutputHigh(bissc_clk);
+ 329              	 .loc 2 15 0
+ 330 0020 0F48     	 ldr r0,.L8+4
+ 331 0022 0121     	 movs r1,#1
+ 332 0024 FFF7FEFF 	 bl XMC_GPIO_SetOutputHigh
+  16:../bissc.c    **** 	
+  17:../bissc.c    **** 	XMC_GPIO_CONFIG_t miso_config={
+ 333              	 .loc 2 17 0
+ 334 0028 3B46     	 mov r3,r7
+ 335 002a 0022     	 movs r2,#0
+ 336 002c 1A60     	 str r2,[r3]
+ 337 002e 0433     	 adds r3,r3,#4
+ 338 0030 0022     	 movs r2,#0
+ 339 0032 1A60     	 str r2,[r3]
+ 340 0034 0433     	 adds r3,r3,#4
+ 341 0036 0022     	 movs r2,#0
+ 342 0038 1A60     	 str r2,[r3]
+ 343 003a 0433     	 adds r3,r3,#4
+ 344 003c 0823     	 movs r3,#8
+ 345 003e 3B70     	 strb r3,[r7]
+  18:../bissc.c    **** 		.mode = XMC_GPIO_MODE_INPUT_PULL_DOWN,
+  19:../bissc.c    **** 	};
+  20:../bissc.c    **** 	XMC_GPIO_Init(bissc_miso,&miso_config);
+ 346              	 .loc 2 20 0
+ 347 0040 3B46     	 mov r3,r7
+ 348 0042 0848     	 ldr r0,.L8+8
+ 349 0044 0721     	 movs r1,#7
+ 350 0046 1A46     	 mov r2,r3
+ 351 0048 FFF7FEFF 	 bl XMC_GPIO_Init
+  21:../bissc.c    **** 	XMC_GPIO_EnableDigitalInput (bissc_miso);
+ 352              	 .loc 2 21 0
+ 353 004c 0548     	 ldr r0,.L8+8
+ 354 004e 0721     	 movs r1,#7
+ 355 0050 FFF7FEFF 	 bl XMC_GPIO_EnableDigitalInput
+  22:../bissc.c    **** 	
+  23:../bissc.c    **** }
+ 356              	 .loc 2 23 0
+ 357 0054 1837     	 adds r7,r7,#24
+ 358              	.LCFI33:
+ 359              	 .cfi_def_cfa_offset 8
+ 360 0056 BD46     	 mov sp,r7
+ 361              	.LCFI34:
+ 362              	 .cfi_def_cfa_register 13
+ 363              	 
+ 364 0058 80BD     	 pop {r7,pc}
+ 365              	.L9:
+ 366 005a 00BF     	 .align 2
+ 367              	.L8:
+ 368 005c 00000000 	 .word .LC0
+ 369 0060 00810248 	 .word 1208123648
+ 370 0064 00840248 	 .word 1208124416
+ 371              	 .cfi_endproc
+ 372              	.LFE146:
+ 374              	 .section .text.bissc_one_bit,"ax",%progbits
+ 375              	 .align 2
+ 376              	 .global bissc_one_bit
+ 377              	 .thumb
+ 378              	 .thumb_func
+ 380              	bissc_one_bit:
+ 381              	.LFB147:
+  24:../bissc.c    **** 
+  25:../bissc.c    **** uint8_t bissc_one_bit(void){
+ 382              	 .loc 2 25 0
+ 383              	 .cfi_startproc
+ 384              	 
+ 385              	 
+ 386 0000 98B5     	 push {r3,r4,r7,lr}
+ 387              	.LCFI35:
+ 388              	 .cfi_def_cfa_offset 16
+ 389              	 .cfi_offset 3,-16
+ 390              	 .cfi_offset 4,-12
+ 391              	 .cfi_offset 7,-8
+ 392              	 .cfi_offset 14,-4
+ 393 0002 00AF     	 add r7,sp,#0
+ 394              	.LCFI36:
+ 395              	 .cfi_def_cfa_register 7
+  26:../bissc.c    **** 	//XMC_GPIO_SetOutputLow
+  27:../bissc.c    **** 	//XMC_GPIO_SetOutputHigh
+  28:../bissc.c    **** 	//XMC_GPIO_ToggleOutput
+  29:../bissc.c    **** 	static uint8_t state_t = 0,state_bit_t=0,done_flag=0,find_start=0;
+  30:../bissc.c    **** 	state_t++;
+ 396              	 .loc 2 30 0
+ 397 0004 7D4B     	 ldr r3,.L28
+ 398 0006 1B78     	 ldrb r3,[r3]
+ 399 0008 0133     	 adds r3,r3,#1
+ 400 000a DAB2     	 uxtb r2,r3
+ 401 000c 7B4B     	 ldr r3,.L28
+ 402 000e 1A70     	 strb r2,[r3]
+  31:../bissc.c    **** 	if(bissc_read_lock){
+ 403              	 .loc 2 31 0
+ 404 0010 7B4B     	 ldr r3,.L28+4
+ 405 0012 1B78     	 ldrb r3,[r3]
+ 406 0014 002B     	 cmp r3,#0
+ 407 0016 0AD0     	 beq .L11
+  32:../bissc.c    **** 		done_flag=0;
+ 408              	 .loc 2 32 0
+ 409 0018 7A4B     	 ldr r3,.L28+8
+ 410 001a 0022     	 movs r2,#0
+ 411 001c 1A70     	 strb r2,[r3]
+  33:../bissc.c    **** 		find_start=0;
+ 412              	 .loc 2 33 0
+ 413 001e 7A4B     	 ldr r3,.L28+12
+ 414 0020 0022     	 movs r2,#0
+ 415 0022 1A70     	 strb r2,[r3]
+  34:../bissc.c    **** 		state_t=0;
+ 416              	 .loc 2 34 0
+ 417 0024 754B     	 ldr r3,.L28
+ 418 0026 0022     	 movs r2,#0
+ 419 0028 1A70     	 strb r2,[r3]
+  35:../bissc.c    **** 		return 0;		//locking
+ 420              	 .loc 2 35 0
+ 421 002a 0023     	 movs r3,#0
+ 422 002c E3E0     	 b .L12
+ 423              	.L11:
+  36:../bissc.c    **** 	}
+  37:../bissc.c    **** 	if(done_flag){
+ 424              	 .loc 2 37 0
+ 425 002e 754B     	 ldr r3,.L28+8
+ 426 0030 1B78     	 ldrb r3,[r3]
+ 427 0032 002B     	 cmp r3,#0
+ 428 0034 15D0     	 beq .L13
+  38:../bissc.c    **** 		XMC_GPIO_SetOutputLow(bissc_clk);
+ 429              	 .loc 2 38 0
+ 430 0036 7548     	 ldr r0,.L28+16
+ 431 0038 0121     	 movs r1,#1
+ 432 003a FFF7FEFF 	 bl XMC_GPIO_SetOutputLow
+  39:../bissc.c    **** 		if(XMC_GPIO_GetInput(bissc_miso)){
+ 433              	 .loc 2 39 0
+ 434 003e 7448     	 ldr r0,.L28+20
+ 435 0040 0721     	 movs r1,#7
+ 436 0042 FFF7FEFF 	 bl XMC_GPIO_GetInput
+ 437 0046 0346     	 mov r3,r0
+ 438 0048 002B     	 cmp r3,#0
+ 439 004a 08D0     	 beq .L14
+  40:../bissc.c    **** 			XMC_GPIO_SetOutputHigh(bissc_clk);
+ 440              	 .loc 2 40 0
+ 441 004c 6F48     	 ldr r0,.L28+16
+ 442 004e 0121     	 movs r1,#1
+ 443 0050 FFF7FEFF 	 bl XMC_GPIO_SetOutputHigh
+  41:../bissc.c    **** 			bissc_read_lock=1;
+ 444              	 .loc 2 41 0
+ 445 0054 6A4B     	 ldr r3,.L28+4
+ 446 0056 0122     	 movs r2,#1
+ 447 0058 1A70     	 strb r2,[r3]
+  42:../bissc.c    **** 			//PcTx_String((unsigned char *) "temp read end\r\n");
+  43:../bissc.c    **** 			return 3;//frame done
+ 448              	 .loc 2 43 0
+ 449 005a 0323     	 movs r3,#3
+ 450 005c CBE0     	 b .L12
+ 451              	.L14:
+  44:../bissc.c    **** 		}else{
+  45:../bissc.c    **** 			//PcTx_String((unsigned char *) "lock again\r\n");
+  46:../bissc.c    **** 			return 2;//frame waiting time out
+ 452              	 .loc 2 46 0
+ 453 005e 0223     	 movs r3,#2
+ 454 0060 C9E0     	 b .L12
+ 455              	.L13:
+  47:../bissc.c    **** 		}
+  48:../bissc.c    **** 	}
+  49:../bissc.c    **** 	if(state_t%2){
+ 456              	 .loc 2 49 0
+ 457 0062 664B     	 ldr r3,.L28
+ 458 0064 1B78     	 ldrb r3,[r3]
+ 459 0066 03F00103 	 and r3,r3,#1
+ 460 006a DBB2     	 uxtb r3,r3
+ 461 006c 002B     	 cmp r3,#0
+ 462 006e 03D0     	 beq .L15
+  50:../bissc.c    **** 		//change 
+  51:../bissc.c    **** 		XMC_GPIO_ToggleOutput(bissc_clk);
+ 463              	 .loc 2 51 0
+ 464 0070 6648     	 ldr r0,.L28+16
+ 465 0072 0121     	 movs r1,#1
+ 466 0074 FFF7FEFF 	 bl XMC_GPIO_ToggleOutput
+ 467              	.L15:
+  52:../bissc.c    **** 	}
+  53:../bissc.c    **** 	if(state_t%4){
+ 468              	 .loc 2 53 0
+ 469 0078 604B     	 ldr r3,.L28
+ 470 007a 1B78     	 ldrb r3,[r3]
+ 471 007c 03F00303 	 and r3,r3,#3
+ 472 0080 DBB2     	 uxtb r3,r3
+ 473 0082 002B     	 cmp r3,#0
+ 474 0084 40F0B680 	 bne .L16
+  54:../bissc.c    **** 	}else{
+  55:../bissc.c    **** 		//get data
+  56:../bissc.c    **** 		read[state_bit_t] = XMC_GPIO_GetInput(bissc_miso);
+ 475              	 .loc 2 56 0
+ 476 0088 624B     	 ldr r3,.L28+24
+ 477 008a 1B78     	 ldrb r3,[r3]
+ 478 008c 1C46     	 mov r4,r3
+ 479 008e 6048     	 ldr r0,.L28+20
+ 480 0090 0721     	 movs r1,#7
+ 481 0092 FFF7FEFF 	 bl XMC_GPIO_GetInput
+ 482 0096 0346     	 mov r3,r0
+ 483 0098 DAB2     	 uxtb r2,r3
+ 484 009a 5F4B     	 ldr r3,.L28+28
+ 485 009c 1A55     	 strb r2,[r3,r4]
+  57:../bissc.c    **** 		if(find_start==0){
+ 486              	 .loc 2 57 0
+ 487 009e 5A4B     	 ldr r3,.L28+12
+ 488 00a0 1B78     	 ldrb r3,[r3]
+ 489 00a2 002B     	 cmp r3,#0
+ 490 00a4 0AD1     	 bne .L17
+  58:../bissc.c    **** 			//no low
+  59:../bissc.c    **** 			if(read[0]==0){
+ 491              	 .loc 2 59 0
+ 492 00a6 5C4B     	 ldr r3,.L28+28
+ 493 00a8 1B78     	 ldrb r3,[r3]
+ 494 00aa 002B     	 cmp r3,#0
+ 495 00ac 04D1     	 bne .L18
+  60:../bissc.c    **** 				find_start=1;
+ 496              	 .loc 2 60 0
+ 497 00ae 564B     	 ldr r3,.L28+12
+ 498 00b0 0122     	 movs r2,#1
+ 499 00b2 1A70     	 strb r2,[r3]
+  61:../bissc.c    **** 				return 5;
+ 500              	 .loc 2 61 0
+ 501 00b4 0523     	 movs r3,#5
+ 502 00b6 9EE0     	 b .L12
+ 503              	.L18:
+  62:../bissc.c    **** 			}else{
+  63:../bissc.c    **** 				return 6;
+ 504              	 .loc 2 63 0
+ 505 00b8 0623     	 movs r3,#6
+ 506 00ba 9CE0     	 b .L12
+ 507              	.L17:
+  64:../bissc.c    **** 			}
+  65:../bissc.c    **** 		}else if(find_start==1){
+ 508              	 .loc 2 65 0
+ 509 00bc 524B     	 ldr r3,.L28+12
+ 510 00be 1B78     	 ldrb r3,[r3]
+ 511 00c0 012B     	 cmp r3,#1
+ 512 00c2 14D1     	 bne .L19
+  66:../bissc.c    **** 			//after low find start
+  67:../bissc.c    **** 			if(read[0]==1){
+ 513              	 .loc 2 67 0
+ 514 00c4 544B     	 ldr r3,.L28+28
+ 515 00c6 1B78     	 ldrb r3,[r3]
+ 516 00c8 012B     	 cmp r3,#1
+ 517 00ca 0ED1     	 bne .L20
+  68:../bissc.c    **** 				state_bit_t++;
+ 518              	 .loc 2 68 0
+ 519 00cc 514B     	 ldr r3,.L28+24
+ 520 00ce 1B78     	 ldrb r3,[r3]
+ 521 00d0 0133     	 adds r3,r3,#1
+ 522 00d2 DAB2     	 uxtb r2,r3
+ 523 00d4 4F4B     	 ldr r3,.L28+24
+ 524 00d6 1A70     	 strb r2,[r3]
+  69:../bissc.c    **** 				bissc_test.start=read[0];
+ 525              	 .loc 2 69 0
+ 526 00d8 4F4B     	 ldr r3,.L28+28
+ 527 00da 1A78     	 ldrb r2,[r3]
+ 528 00dc 4F4B     	 ldr r3,.L28+32
+ 529 00de 1A70     	 strb r2,[r3]
+  70:../bissc.c    **** 				find_start=2;
+ 530              	 .loc 2 70 0
+ 531 00e0 494B     	 ldr r3,.L28+12
+ 532 00e2 0222     	 movs r2,#2
+ 533 00e4 1A70     	 strb r2,[r3]
+  71:../bissc.c    **** 				return 7;
+ 534              	 .loc 2 71 0
+ 535 00e6 0723     	 movs r3,#7
+ 536 00e8 85E0     	 b .L12
+ 537              	.L20:
+  72:../bissc.c    **** 			}else{
+  73:../bissc.c    **** 				return 8;
+ 538              	 .loc 2 73 0
+ 539 00ea 0823     	 movs r3,#8
+ 540 00ec 83E0     	 b .L12
+ 541              	.L19:
+  74:../bissc.c    **** 			}
+  75:../bissc.c    **** 		}
+  76:../bissc.c    **** 		if(state_bit_t>=2&&state_bit_t<=21){
+ 542              	 .loc 2 76 0
+ 543 00ee 494B     	 ldr r3,.L28+24
+ 544 00f0 1B78     	 ldrb r3,[r3]
+ 545 00f2 012B     	 cmp r3,#1
+ 546 00f4 12D9     	 bls .L21
+ 547              	 .loc 2 76 0 is_stmt 0 discriminator 1
+ 548 00f6 474B     	 ldr r3,.L28+24
+ 549 00f8 1B78     	 ldrb r3,[r3]
+ 550 00fa 152B     	 cmp r3,#21
+ 551 00fc 0ED8     	 bhi .L21
+  77:../bissc.c    **** 			bissc_test.data = (bissc_test.data)<<1 ;
+ 552              	 .loc 2 77 0 is_stmt 1
+ 553 00fe 474B     	 ldr r3,.L28+32
+ 554 0100 5B68     	 ldr r3,[r3,#4]
+ 555 0102 5B00     	 lsls r3,r3,#1
+ 556 0104 454A     	 ldr r2,.L28+32
+ 557 0106 5360     	 str r3,[r2,#4]
+  78:../bissc.c    **** 			bissc_test.data |= XMC_GPIO_GetInput(bissc_miso);
+ 558              	 .loc 2 78 0
+ 559 0108 4148     	 ldr r0,.L28+20
+ 560 010a 0721     	 movs r1,#7
+ 561 010c FFF7FEFF 	 bl XMC_GPIO_GetInput
+ 562 0110 0246     	 mov r2,r0
+ 563 0112 424B     	 ldr r3,.L28+32
+ 564 0114 5B68     	 ldr r3,[r3,#4]
+ 565 0116 1343     	 orrs r3,r3,r2
+ 566 0118 404A     	 ldr r2,.L28+32
+ 567 011a 5360     	 str r3,[r2,#4]
+ 568              	.L21:
+  79:../bissc.c    **** 		}
+  80:../bissc.c    **** 		if(state_bit_t>=22&&state_bit_t<=27){
+ 569              	 .loc 2 80 0
+ 570 011c 3D4B     	 ldr r3,.L28+24
+ 571 011e 1B78     	 ldrb r3,[r3]
+ 572 0120 152B     	 cmp r3,#21
+ 573 0122 15D9     	 bls .L22
+ 574              	 .loc 2 80 0 is_stmt 0 discriminator 1
+ 575 0124 3B4B     	 ldr r3,.L28+24
+ 576 0126 1B78     	 ldrb r3,[r3]
+ 577 0128 1B2B     	 cmp r3,#27
+ 578 012a 11D8     	 bhi .L22
+  81:../bissc.c    **** 			bissc_test.zero = (bissc_test.crc)<<1 ;
+ 579              	 .loc 2 81 0 is_stmt 1
+ 580 012c 3B4B     	 ldr r3,.L28+32
+ 581 012e DB7A     	 ldrb r3,[r3,#11]
+ 582 0130 5B00     	 lsls r3,r3,#1
+ 583 0132 DAB2     	 uxtb r2,r3
+ 584 0134 394B     	 ldr r3,.L28+32
+ 585 0136 1A72     	 strb r2,[r3,#8]
+  82:../bissc.c    **** 			bissc_test.zero |= XMC_GPIO_GetInput(bissc_miso);
+ 586              	 .loc 2 82 0
+ 587 0138 3548     	 ldr r0,.L28+20
+ 588 013a 0721     	 movs r1,#7
+ 589 013c FFF7FEFF 	 bl XMC_GPIO_GetInput
+ 590 0140 0146     	 mov r1,r0
+ 591 0142 364B     	 ldr r3,.L28+32
+ 592 0144 1A7A     	 ldrb r2,[r3,#8]
+ 593 0146 CBB2     	 uxtb r3,r1
+ 594 0148 1343     	 orrs r3,r3,r2
+ 595 014a DAB2     	 uxtb r2,r3
+ 596 014c 334B     	 ldr r3,.L28+32
+ 597 014e 1A72     	 strb r2,[r3,#8]
+ 598              	.L22:
+  83:../bissc.c    **** 		}
+  84:../bissc.c    **** 		if(state_bit_t>=30&&state_bit_t<=35){
+ 599              	 .loc 2 84 0
+ 600 0150 304B     	 ldr r3,.L28+24
+ 601 0152 1B78     	 ldrb r3,[r3]
+ 602 0154 1D2B     	 cmp r3,#29
+ 603 0156 15D9     	 bls .L23
+ 604              	 .loc 2 84 0 is_stmt 0 discriminator 1
+ 605 0158 2E4B     	 ldr r3,.L28+24
+ 606 015a 1B78     	 ldrb r3,[r3]
+ 607 015c 232B     	 cmp r3,#35
+ 608 015e 11D8     	 bhi .L23
+  85:../bissc.c    **** 			bissc_test.crc = (bissc_test.crc)<<1 ;
+ 609              	 .loc 2 85 0 is_stmt 1
+ 610 0160 2E4B     	 ldr r3,.L28+32
+ 611 0162 DB7A     	 ldrb r3,[r3,#11]
+ 612 0164 5B00     	 lsls r3,r3,#1
+ 613 0166 DAB2     	 uxtb r2,r3
+ 614 0168 2C4B     	 ldr r3,.L28+32
+ 615 016a DA72     	 strb r2,[r3,#11]
+  86:../bissc.c    **** 			bissc_test.crc |= XMC_GPIO_GetInput(bissc_miso);
+ 616              	 .loc 2 86 0
+ 617 016c 2848     	 ldr r0,.L28+20
+ 618 016e 0721     	 movs r1,#7
+ 619 0170 FFF7FEFF 	 bl XMC_GPIO_GetInput
+ 620 0174 0146     	 mov r1,r0
+ 621 0176 294B     	 ldr r3,.L28+32
+ 622 0178 DA7A     	 ldrb r2,[r3,#11]
+ 623 017a CBB2     	 uxtb r3,r1
+ 624 017c 1343     	 orrs r3,r3,r2
+ 625 017e DAB2     	 uxtb r2,r3
+ 626 0180 264B     	 ldr r3,.L28+32
+ 627 0182 DA72     	 strb r2,[r3,#11]
+ 628              	.L23:
+  87:../bissc.c    **** 		}
+  88:../bissc.c    **** 		switch (state_bit_t){
+ 629              	 .loc 2 88 0
+ 630 0184 234B     	 ldr r3,.L28+24
+ 631 0186 1B78     	 ldrb r3,[r3]
+ 632 0188 1C2B     	 cmp r3,#28
+ 633 018a 0ED0     	 beq .L25
+ 634 018c 1D2B     	 cmp r3,#29
+ 635 018e 15D0     	 beq .L26
+ 636 0190 012B     	 cmp r3,#1
+ 637 0192 1CD1     	 bne .L24
+  89:../bissc.c    **** 				case 1:
+  90:../bissc.c    **** 								bissc_test.csd = read[1];
+ 638              	 .loc 2 90 0
+ 639 0194 204B     	 ldr r3,.L28+28
+ 640 0196 5A78     	 ldrb r2,[r3,#1]
+ 641 0198 204B     	 ldr r3,.L28+32
+ 642 019a 5A70     	 strb r2,[r3,#1]
+  91:../bissc.c    **** 								bissc_test.data = 0;
+ 643              	 .loc 2 91 0
+ 644 019c 1F4B     	 ldr r3,.L28+32
+ 645 019e 0022     	 movs r2,#0
+ 646 01a0 5A60     	 str r2,[r3,#4]
+  92:../bissc.c    **** 								bissc_test.crc = 0;
+ 647              	 .loc 2 92 0
+ 648 01a2 1E4B     	 ldr r3,.L28+32
+ 649 01a4 0022     	 movs r2,#0
+ 650 01a6 DA72     	 strb r2,[r3,#11]
+  93:../bissc.c    **** 								break;
+ 651              	 .loc 2 93 0
+ 652 01a8 11E0     	 b .L24
+ 653              	.L25:
+  94:../bissc.c    **** 				case 28:
+  95:../bissc.c    **** 								bissc_test.err = XMC_GPIO_GetInput(bissc_miso);
+ 654              	 .loc 2 95 0
+ 655 01aa 1948     	 ldr r0,.L28+20
+ 656 01ac 0721     	 movs r1,#7
+ 657 01ae FFF7FEFF 	 bl XMC_GPIO_GetInput
+ 658 01b2 0346     	 mov r3,r0
+ 659 01b4 DAB2     	 uxtb r2,r3
+ 660 01b6 194B     	 ldr r3,.L28+32
+ 661 01b8 5A72     	 strb r2,[r3,#9]
+  96:../bissc.c    **** 								break;
+ 662              	 .loc 2 96 0
+ 663 01ba 08E0     	 b .L24
+ 664              	.L26:
+  97:../bissc.c    **** 				case 29:
+  98:../bissc.c    **** 								bissc_test.war = XMC_GPIO_GetInput(bissc_miso);
+ 665              	 .loc 2 98 0
+ 666 01bc 1448     	 ldr r0,.L28+20
+ 667 01be 0721     	 movs r1,#7
+ 668 01c0 FFF7FEFF 	 bl XMC_GPIO_GetInput
+ 669 01c4 0346     	 mov r3,r0
+ 670 01c6 DAB2     	 uxtb r2,r3
+ 671 01c8 144B     	 ldr r3,.L28+32
+ 672 01ca 9A72     	 strb r2,[r3,#10]
+  99:../bissc.c    **** 								break;
+ 673              	 .loc 2 99 0
+ 674 01cc 00BF     	 nop
+ 675              	.L24:
+ 100:../bissc.c    **** 				}
+ 101:../bissc.c    **** 		state_bit_t++;
+ 676              	 .loc 2 101 0
+ 677 01ce 114B     	 ldr r3,.L28+24
+ 678 01d0 1B78     	 ldrb r3,[r3]
+ 679 01d2 0133     	 adds r3,r3,#1
+ 680 01d4 DAB2     	 uxtb r2,r3
+ 681 01d6 0F4B     	 ldr r3,.L28+24
+ 682 01d8 1A70     	 strb r2,[r3]
+ 102:../bissc.c    **** 
+ 103:../bissc.c    **** 		if(state_bit_t==36){
+ 683              	 .loc 2 103 0
+ 684 01da 0E4B     	 ldr r3,.L28+24
+ 685 01dc 1B78     	 ldrb r3,[r3]
+ 686 01de 242B     	 cmp r3,#36
+ 687 01e0 08D1     	 bne .L16
+ 104:../bissc.c    **** 			state_bit_t = 0;
+ 688              	 .loc 2 104 0
+ 689 01e2 0C4B     	 ldr r3,.L28+24
+ 690 01e4 0022     	 movs r2,#0
+ 691 01e6 1A70     	 strb r2,[r3]
+ 105:../bissc.c    **** 			state_t=0;
+ 692              	 .loc 2 105 0
+ 693 01e8 044B     	 ldr r3,.L28
+ 694 01ea 0022     	 movs r2,#0
+ 695 01ec 1A70     	 strb r2,[r3]
+ 106:../bissc.c    **** 			done_flag=1;
+ 696              	 .loc 2 106 0
+ 697 01ee 054B     	 ldr r3,.L28+8
+ 698 01f0 0122     	 movs r2,#1
+ 699 01f2 1A70     	 strb r2,[r3]
+ 700              	.L16:
+ 107:../bissc.c    **** 		}
+ 108:../bissc.c    **** 	}
+ 109:../bissc.c    **** 	
+ 110:../bissc.c    **** 	return 1;		//frame working...
+ 701              	 .loc 2 110 0
+ 702 01f4 0123     	 movs r3,#1
+ 703              	.L12:
+ 111:../bissc.c    **** }
+ 704              	 .loc 2 111 0
+ 705 01f6 1846     	 mov r0,r3
+ 706 01f8 98BD     	 pop {r3,r4,r7,pc}
+ 707              	.L29:
+ 708 01fa 00BF     	 .align 2
+ 709              	.L28:
+ 710 01fc 00000000 	 .word state_t.7170
+ 711 0200 00000000 	 .word bissc_read_lock
+ 712 0204 00000000 	 .word done_flag.7172
+ 713 0208 00000000 	 .word find_start.7173
+ 714 020c 00810248 	 .word 1208123648
+ 715 0210 00840248 	 .word 1208124416
+ 716 0214 00000000 	 .word state_bit_t.7171
+ 717 0218 00000000 	 .word read
+ 718 021c 00000000 	 .word bissc_test
+ 719              	 .cfi_endproc
+ 720              	.LFE147:
+ 722              	 .section .bss.state_t.7170,"aw",%nobits
+ 725              	state_t.7170:
+ 726 0000 00       	 .space 1
+ 727              	 .section .bss.done_flag.7172,"aw",%nobits
+ 730              	done_flag.7172:
+ 731 0000 00       	 .space 1
+ 732              	 .section .bss.find_start.7173,"aw",%nobits
+ 735              	find_start.7173:
+ 736 0000 00       	 .space 1
+ 737              	 .section .bss.state_bit_t.7171,"aw",%nobits
+ 740              	state_bit_t.7171:
+ 741 0000 00       	 .space 1
+ 742              	 .text
+ 743              	.Letext0:
+ 744              	 .file 3 "e:\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 745              	 .file 4 "e:\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 746              	 .file 5 "C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 747              	 .file 6 "../bissc.h"
+ 748              	 .file 7 "C:/Workspaces/DAVE-4.4.2-64Bit/bissc_io_ce/Libraries/CMSIS/Include/core_cm4.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 bissc.c
+    {standard input}:20     .text.XMC_GPIO_SetOutputHigh:00000000 $t
+    {standard input}:24     .text.XMC_GPIO_SetOutputHigh:00000000 XMC_GPIO_SetOutputHigh
+    {standard input}:68     .text.XMC_GPIO_SetOutputLow:00000000 $t
+    {standard input}:72     .text.XMC_GPIO_SetOutputLow:00000000 XMC_GPIO_SetOutputLow
+    {standard input}:115    .text.XMC_GPIO_ToggleOutput:00000000 $t
+    {standard input}:119    .text.XMC_GPIO_ToggleOutput:00000000 XMC_GPIO_ToggleOutput
+    {standard input}:162    .text.XMC_GPIO_GetInput:00000000 $t
+    {standard input}:166    .text.XMC_GPIO_GetInput:00000000 XMC_GPIO_GetInput
+    {standard input}:210    .text.XMC_GPIO_EnableDigitalInput:00000000 $t
+    {standard input}:214    .text.XMC_GPIO_EnableDigitalInput:00000000 XMC_GPIO_EnableDigitalInput
+    {standard input}:265    .bss.read:00000000 read
+    {standard input}:262    .bss.read:00000000 $d
+    {standard input}:271    .data.bissc_read_lock:00000000 bissc_read_lock
+    {standard input}:277    .bss.bissc_state:00000000 bissc_state
+    {standard input}:278    .bss.bissc_state:00000000 $d
+    {standard input}:284    .bss.bissc_test:00000000 bissc_test
+    {standard input}:281    .bss.bissc_test:00000000 $d
+    {standard input}:287    .rodata:00000000 $d
+    {standard input}:295    .text.bissc_init:00000000 $t
+    {standard input}:300    .text.bissc_init:00000000 bissc_init
+    {standard input}:368    .text.bissc_init:0000005c $d
+    {standard input}:375    .text.bissc_one_bit:00000000 $t
+    {standard input}:380    .text.bissc_one_bit:00000000 bissc_one_bit
+    {standard input}:710    .text.bissc_one_bit:000001fc $d
+    {standard input}:725    .bss.state_t.7170:00000000 state_t.7170
+    {standard input}:730    .bss.done_flag.7172:00000000 done_flag.7172
+    {standard input}:735    .bss.find_start.7173:00000000 find_start.7173
+    {standard input}:740    .bss.state_bit_t.7171:00000000 state_bit_t.7171
+    {standard input}:726    .bss.state_t.7170:00000000 $d
+    {standard input}:731    .bss.done_flag.7172:00000000 $d
+    {standard input}:736    .bss.find_start.7173:00000000 $d
+    {standard input}:741    .bss.state_bit_t.7171:00000000 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+XMC_GPIO_Init
